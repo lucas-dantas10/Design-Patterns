@@ -1,77 +1,43 @@
 <?php
 
-// use Core\Creational\Builder\Practical\Address;
-// use Core\Creational\Builder\Practical\Enums\Role;
-// use Core\Creational\Builder\Practical\Phone;
-// use Core\Creational\Builder\Practical\User;
 
-use Core\Creational\Builder\Practical\Enums\Role;
-use Core\Creational\Builder\Practical\UserBuilder;
-use Core\Creational\Singleton\Practical\DbConnection;
-use Core\Creational\Singleton\Conceptual\Singleton;
+require_once __DIR__ . '/../vendor/autoload.php';
 
-require_once '../vendor/autoload.php';
+use Core\Creational\Builder\Conceptual\ApplePhone;
+use Core\Creational\Builder\Conceptual\Request\BuilderRequest;
+use Core\Creational\Builder\Conceptual\Request\MethodsEnum;
+use Core\Creational\Builder\Conceptual\SamsungPhone;
+use Core\Creational\Builder\Conceptual\SmartPhoneBuilder;
+use Core\Creational\Builder\Conceptual\SmartPhoneDirector;
 
-// $carlosFounder = new User(
-//     firstName: 'Carlos',
-//     lastName: 'Ferreira',
-//     email: 'carlos@especializati.com.br',
-//     age: 29,
-//     role: Role::F,
+// **** EXAMPLE REQUEST *****
+
+// $request = (new BuilderRequest)
+//     ->url('http://localhost:8080/api/v1/users')
+//     ->method(MethodsEnum::GET)
+//     ->payload(['filters' => 'jfdkajkfa'])
+//     ->getRequest();
+
+
+// echo '<pre>';
+// var_dump($request);
+
+
+// **** EXAMPLE SMARTPHONE *****
+
+// $galaxy20 = new SmartPhoneBuilder(
+//     smartPhone: new SamsungPhone(),
+//     data: [
+//         'gpu' => 'XPTO',
+//         'cpu' => 'XPTO',
+//         'ram' => 12,
+//         'model' => 'XPTO',
+//         'sensors' => ['XPTO'],
+//     ]
 // );
-// $carlosFounder->setAddress(
-//     new Address(
-//         street: 'Rua x',
-//         city: 'City X',
-//         state: 'State X',
-//         postalCode: 5757009,
-//         country: 'BR',
-//     )
-// );
-// $carlosFounder->setPhone(
-//     new Phone(
-//         ddd: 64,
-//         number: 981701406,
-//     )
-// );
-// $user = (new UserBuilder)
-//             ->addBasicInfo(
-//                 firstName: 'Carlos',
-//                 lastName: 'Ferreira',
-//                 email: 'carlos@especializati.com.br',
-//                 age: 29,
-//                 role: Role::F,
-//             )
-//             ->addAddress(
-//                 street: 'Rua x',
-//                 city: 'City X',
-//                 state: 'State X',
-//                 postalCode: 5757009,
-//                 country: 'BR',
-//             )
-//             ->addPhone(
-//                 ddd: 64,
-//                 number: 981701406,
-//             )
-//             ->build();
 
-/**
- * Singleton Conceitual
- */
-// $instanceA = Singleton::getInstance();
-// $instanceB = Singleton::getInstance();
-// var_dump($instanceA === $instanceB);
+// $smartPhoneCreator = new SmartPhoneDirector($galaxy20);
+// $smartPhoneCreator->buildPhoneWithoutSensors();
 
-// $instance = DbConnection::getInstance();
-// DbConnection::getInstance();
-// DbConnection::getInstance();
-// DbConnection::getInstance();
-// DbConnection::getInstance();
-// DbConnection::getInstance();
-
-DbConnection::getConnection();
-DbConnection::getConnection();
-DbConnection::getConnection();
-DbConnection::getConnection();
-DbConnection::getConnection();
-DbConnection::getConnection();
+// echo '<pre>';
+// var_dump($galaxy20->getSmartPhone());
