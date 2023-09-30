@@ -9,6 +9,22 @@ use Core\Creational\Builder\Conceptual\Request\MethodsEnum;
 use Core\Creational\Builder\Conceptual\SamsungPhone;
 use Core\Creational\Builder\Conceptual\SmartPhoneBuilder;
 use Core\Creational\Builder\Conceptual\SmartPhoneDirector;
+use Core\Creational\FactoryMethod\Conceptual\ConcreteCreator1;
+use Core\Creational\FactoryMethod\Conceptual\ConcreteCreator2;
+use Core\Creational\FactoryMethod\Conceptual\Creator;
+
+// **** Factory Method *****
+function clientCode(Creator $creator)
+{
+    echo "Client: I'm not aware of the creator's class, but it still works.\n"
+        . $creator->someOperation();
+}
+
+clientCode(new ConcreteCreator1());
+
+clientCode(new ConcreteCreator2());
+
+
 
 // **** EXAMPLE REQUEST *****
 
