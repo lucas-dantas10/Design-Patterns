@@ -17,35 +17,50 @@ use Core\Creational\FactoryMethod\Conceptual\Creator;
 use Core\Creational\FactoryMethod\RealWorld\FacebookPoster;
 use Core\Creational\FactoryMethod\RealWorld\LinkedinPoster;
 use Core\Creational\FactoryMethod\RealWorld\SocialNetworkPoster;
+use Core\Creational\Singleton\Conceptual\Singleton;
 
-// **** Builder PRACTICAL *****
+/**
+ * SINGLETON CONCEPTUAL
+ */
 
-$user = (new UserBuilder)
-            ->addBasicInfo(
-                name: 'teste',
-                lastName: 'example',
-                email: 'teste@example.com',
-                age: 19,
-                role: Role::D,
-                active: true
-            )
-            ->addAddress(
-                street: 'Rua testando',
-                city: 'Rio de Janeiro',
-                state: 'Rio de Janeiro',
-                postalCode: 90867192,
-                country: 'Brasil'
-            )
-            ->addPhone(
-                21,
-                665748899,
-            )
-            ->build();
+$instanceA = Singleton::getInstance();
+$instanceB = Singleton::getInstance();
 
-var_dump($user);
+var_dump($instanceA === $instanceB);
 
 
-// **** Factory Method REAL WORLD *****
+/**
+ * BUILDER PRACTICAL
+ */
+
+// $user = (new UserBuilder)
+//             ->addBasicInfo(
+//                 name: 'teste',
+//                 lastName: 'example',
+//                 email: 'teste@example.com',
+//                 age: 19,
+//                 role: Role::D,
+//                 active: true
+//             )
+//             ->addAddress(
+//                 street: 'Rua testando',
+//                 city: 'Rio de Janeiro',
+//                 state: 'Rio de Janeiro',
+//                 postalCode: 90867192,
+//                 country: 'Brasil'
+//             )
+//             ->addPhone(
+//                 21,
+//                 665748899,
+//             )
+//             ->build();
+
+// var_dump($user);
+
+
+/**
+ * FACTORY METHOD PRACTICAL
+ */
 
 // function clientCode(SocialNetworkPoster $creator)
 // {
