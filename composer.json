@@ -1,6 +1,6 @@
 {
-    "name": "carlosfgti/design-patterns",
-    "description": "Padrões de Projeto com PHP",
+    "name": "lucas/design-patterns",
+    "description": "Padrões de Projeto em PHP",
     "autoload": {
         "psr-4": {
             "Core\\": "src/Core/"
@@ -8,8 +8,7 @@
     },
     "authors": [
         {
-            "name": "Carlos Ferreira",
-            "email": "carlos@especializati.com.br"
+            "name": "Lucas Dantas"
         }
     ],
     "require": {}
