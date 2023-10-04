@@ -18,15 +18,33 @@ use Core\Creational\FactoryMethod\RealWorld\FacebookPoster;
 use Core\Creational\FactoryMethod\RealWorld\LinkedinPoster;
 use Core\Creational\FactoryMethod\RealWorld\SocialNetworkPoster;
 use Core\Creational\Singleton\Conceptual\Singleton;
+use Core\Creational\Singleton\Practical\DbConnection;
+
+/**
+ * SINGLETON PRACTICAL
+ */
+
+// $con = DbConnection::getInstance();
+
+// $i = 0;
+
+// while($i < 6) {
+//     print("++: " . $i++ . PHP_EOL);
+//     print($i . PHP_EOL);
+//     if ($i++ == 3)  break;
+// }
+
+echo "Loop at $i by break statement";
+
 
 /**
  * SINGLETON CONCEPTUAL
  */
 
-$instanceA = Singleton::getInstance();
-$instanceB = Singleton::getInstance();
+// $instanceA = Singleton::getInstance();
+// $instanceB = Singleton::getInstance();
 
-var_dump($instanceA === $instanceB);
+// var_dump($instanceA === $instanceB);
 
 
 /**
